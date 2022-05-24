@@ -1,0 +1,2 @@
+export const GET_VIDEO = "GET_VIDEO"
+export const GET_SPECIFIC_VIDEO ="GET_SPECIFIC_VIDEO"
