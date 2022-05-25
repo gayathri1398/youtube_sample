@@ -1,21 +1,29 @@
-import {  GET_VIDEO, } from "./data.type";
+import {  GET_VIDEO,GET_SPECIFIC_VIDEO } from "./data.type";
 
 const INITIAL_STATE ={
     video:[],
     specificVideo:[]
 }
 
-export const DataReducer=(state=INITIAL_STATE,action)=>{
+const dataReducer=(state=INITIAL_STATE,action)=>{
   switch (action.type) {
       case GET_VIDEO:
           return {
               ...state,
               video:action.payload
           }
-          
+      case GET_SPECIFIC_VIDEO:
+          return{
+              ...state,
+              specificVideo:action.payload
+          }  
     
   
       default:
-          break;
+          return{
+              ...state
+          }
   }
 }
+
+export default dataReducer;

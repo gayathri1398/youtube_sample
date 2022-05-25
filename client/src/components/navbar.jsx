@@ -1,6 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { useDispatch } from 'react-redux';
+
+import { getSpecificVideo } from '../Redux/Reducer/Data/data.action';
+
+
 
 const NavBar = () => {
+    const dispatch = useDispatch();
+
+    dispatch(getSpecificVideo()).then(data=>console.log(data))
     return (
         <div className='container mx-auto px-4 py-4'>
           <div className='flex justify-between'>

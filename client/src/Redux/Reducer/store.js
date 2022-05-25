@@ -1,7 +1,7 @@
 import { legacy_createStore as createStore,applyMiddleware } from "redux";
 import thunk from 'redux-thunk';
 
-import { DataReducer } from "./Data/data.reducer";
+import dataReducer from "./Data/data.reducer";
 
 const middleware = [thunk]
 
@@ -10,6 +10,6 @@ if(process.env.NODE_ENV==="development"){
     middleware.push(logger)
 }
 
-const store = createStore(DataReducer,{},applyMiddleware(...middleware));
+const store = createStore(dataReducer,{},applyMiddleware(...middleware));
 
 export default store;
